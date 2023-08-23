@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Aug 23 18:42:14 GMT 2023","Wed Aug 23 18:42:21 GMT 2023","7130","","guru.qa.GithubTestStepsTest","","guru.qa.GithubTestStepsTest","selenideSearchAnnotatedTest","selenideSearchAnnotatedTest()",""
+"passed","Wed Aug 23 18:42:24 GMT 2023","Wed Aug 23 18:42:26 GMT 2023","2454","","guru.qa.GithubTests","","guru.qa.GithubTests","SelenideSearchTest","SelenideSearchTest()",""
+"passed","Wed Aug 23 18:42:21 GMT 2023","Wed Aug 23 18:42:24 GMT 2023","2686","","guru.qa.GithubTestStepsTest","","guru.qa.GithubTestStepsTest","selenideSearchLambdaTest","selenideSearchLambdaTest()",""
