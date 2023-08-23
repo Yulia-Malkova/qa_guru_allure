@@ -1,7 +1,9 @@
 package guru.qa;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.exist;
@@ -11,12 +13,17 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 
-public class GithubTestStepsTest {
+public class StepsTest {
 
     private static final String REPOSITORY = "Yulia-Malkova/demoqa-21";
     private static final int ISSUE = 1;
 
     @Test
+    @Feature("Issue в репозитории")
+    @Story("Поиск Issue")
+    @Owner("yulia-malkova")
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Наличие issue #1 в репозитории Yulia-Malkova/demoqa-21")
     public void selenideSearchLambdaTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
@@ -24,7 +31,7 @@ public class GithubTestStepsTest {
         step("Открываем главную страницу Github", () -> {
             open("https://github.com");
         });
-        step("Ищем репозиторий" + REPOSITORY, ()  -> {
+        step("Ищем репозиторий" + REPOSITORY, () -> {
             $(".search-input-container").click();
             $("#query-builder-test").setValue((REPOSITORY)).submit();
         });
@@ -34,13 +41,18 @@ public class GithubTestStepsTest {
         step("Открываем таб Issues", () -> {
             $("#issues-tab").click();
         });
-        step("Проверяем наличие Issue с номером " + ISSUE, () ->{
-            $(withText("#"+ISSUE)).should(exist);
+        step("Проверяем наличие Issue с номером " + ISSUE, () -> {
+            $(withText("#" + ISSUE)).should(exist);
         });
     }
 
     @Test
-    public void selenideSearchAnnotatedTest(){
+    @Feature("Issue в репозитории")
+    @Story("Поиск Issue")
+    @Owner("yulia-malkova")
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Наличие issue #1 в репозитории Yulia-Malkova/demoqa-21")
+    public void selenideSearchAnnotatedTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         WebSteps steps = new WebSteps();
         steps.openMainGithubPage();
@@ -49,4 +61,4 @@ public class GithubTestStepsTest {
         steps.openIssuesTab();
         steps.shouldSeeIssueWithNumber(ISSUE);
     }
-    }
+}
