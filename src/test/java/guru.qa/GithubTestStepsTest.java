@@ -34,8 +34,19 @@ public class GithubTestStepsTest {
         step("Открываем таб Issues", () -> {
             $("#issues-tab").click();
         });
-        step("Проверяем наличие Issue с номером" + ISSUE, () ->{
+        step("Проверяем наличие Issue с номером " + ISSUE, () ->{
             $(withText("#"+ISSUE)).should(exist);
         });
+    }
+
+    @Test
+    public void selenideSearchAnnotatedTest(){
+        SelenideLogger.addListener("allure", new AllureSelenide());
+        WebSteps steps = new WebSteps();
+        steps.openMainGithubPage();
+        steps.searchForRepository(REPOSITORY);
+        steps.clickOnRepositoryLink(REPOSITORY);
+        steps.openIssuesTab();
+        steps.shouldSeeIssueWithNumber(ISSUE);
     }
     }

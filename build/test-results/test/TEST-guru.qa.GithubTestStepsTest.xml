@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="guru.qa.GithubTestStepsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-08-23T16:21:17" hostname="MacBook-Air-Yulia.local" time="53.872">
+  <properties/>
+  <testcase name="selenideSearchAnnotadedTest()" classname="guru.qa.GithubTestStepsTest" time="53.872"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[авг. 23, 2023 7:21:30 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 116, so returning the closest version found: 115
+]]></system-err>
+</testsuite>
