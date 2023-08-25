@@ -3,9 +3,7 @@ package guru.qa;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Feature;
-import io.qameta.allure.Link;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -26,7 +24,7 @@ public class SimpleSelenideTestWithListener {
     @Owner("yulia-malkova")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Наличие issue #1 в репозитории Yulia-Malkova/demoqa-21")
-    public void SelenideSearchTest() {
+    public void selenideSearchTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         open("https://github.com");
         $(".search-input-container").click();
